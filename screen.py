@@ -14,10 +14,11 @@ while running:
         if event.type == pygame.QUIT:
             running = False
 
-    for x in range(0, 1000, 20):
-        pygame.draw.line(screen,green,(1,x), (1000, x),2)
-        pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
-        pygame.display.update()
+        if event.type == pygame.KEYDOWN:
+            for x in range(0, 1000, 20):
+                pygame.draw.line(screen,green,(1,x), (1000, x),2)
+                pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
+                pygame.display.update()
 
 
 
