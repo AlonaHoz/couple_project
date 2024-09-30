@@ -48,7 +48,12 @@ for i in range(25):
         if "second" in board[i][j]:
             img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\grass.png')
             img = pygame.transform.scale(img, (60, 60))
-            screen.blit(img, (j*20, i*15))
+            screen.blit(img, (j * 18, i * 18))
+            pygame.display.flip()
+        if "third" in board[i][j]:
+            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\flag.png')
+            img = pygame.transform.scale(img, (80, 60))
+            screen.blit(img, (j * 20, i * 20))
             pygame.display.flip()
 
 
