@@ -51,10 +51,12 @@ def put_mine():
                         if random_col_number == s:
                             board[random_row_number][s] = "mine"
                         else:
-                            board[random_row_number][s] = "continue mine"
+                            board[random_row_number][s] = "continue m"
 
     return board
 
+x = put_mine()
+print(x)
 
 def put_bush():
     board = put_mine()
