@@ -48,7 +48,11 @@ def put_mine():
                 if count == 3:
                     total_count += 1
                     for s in range(random_col_number, random_col_number + 3):
-                        board[random_row_number][s] = "mine"
+                        if random_row_number == s:
+                            board[random_row_number][s] = "mine"
+                        else:
+                            board[random_row_number][s] = "continue mine"
+
     return board
 
 
