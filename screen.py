@@ -1,3 +1,6 @@
 import pygame
+
 pygame.init()
-print("k")
+back_ground_color =
+screen = pygame.display.set_mode((700, 600))
+
