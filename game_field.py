@@ -37,7 +37,7 @@ def put_flag():
 def put_mine():
     board = put_flag()
     total_count = 0
-    while total_count < 80:
+    while total_count < 20:
         random_row_number = random.randint(0, 24)
         for i in range(25):
             if i == random_row_number:
@@ -64,7 +64,7 @@ print(x)
 def put_bush():
     board = put_mine()
     total_count = 0
-    while total_count < 20:
+    while total_count < 80:
         value = True
         while value:
             random_row_number = random.randint(0, 24)
