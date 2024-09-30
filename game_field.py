@@ -21,7 +21,7 @@ def put_mine():
             random_col_number = 50
             count = 0
             while random_col_number > 47 and count == 3:
-                random_col_number = random.randint(1, 50)
+                random_col_number = random.randint(1, 49)
                 for k in range(random_col_number, random_col_number + 3):
                     if board[random_row_number][k] == "FREE":
                         count += 1
