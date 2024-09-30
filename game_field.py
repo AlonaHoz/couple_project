@@ -7,4 +7,3 @@ def create_board():
             print(*main_list)
 
 
-def
