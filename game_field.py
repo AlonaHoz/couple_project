@@ -26,7 +26,7 @@ def put_mine():
                     if board[random_row_number][k] == "FREE":
                         count += 1
             for s in range(random_col_number, random_col_number + 3):
-                board[random_row_number][s] = f"mine{s}"
+                board[random_row_number][s] = "mine"
     return board
 
 
