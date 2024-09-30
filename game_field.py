@@ -2,12 +2,14 @@ import random
 
 
 def create_board():
-    main_list = []
+    board = []
+    spot = "FREE"
     for i in range(25):
         second_list = []
         for j in range(50):
-            main_list.append(second_list)
-    return main_list
+            second_list.append(spot)
+        board.append(second_list)
+    return board
 
 
 def put_mine():
@@ -21,3 +23,8 @@ def put_mine():
                     random_col_number = random.randint(1, 50)
                 for s in range(random_col_number, random_col_number + 3):
                     board[random_row_number][s] = f"mine{s}"
+    return board
+
+
+p = put_mine()
+print(p)
