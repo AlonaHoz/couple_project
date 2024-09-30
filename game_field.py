@@ -7,10 +7,7 @@ def create_board():
         second_list = []
         for j in range(50):
             main_list.append(second_list)
-            print(main_list)
-
-
-create_board()
+    return main_list
 
 
 def put_mine():
