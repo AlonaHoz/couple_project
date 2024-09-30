@@ -1,4 +1,6 @@
 import pygame
+
+import game_field
 from game_field import create_board
 from game_field import put_mine
 
@@ -28,8 +30,8 @@ def visualize_grid():
     for row in create_board():
         z = 0
         for item in row:
-            if item == 0:
-                create_square(z, y, (255, 255, 255))
+            if item == 20:
+                create_square(z, y, green)
             else:
                 create_square(z, y, green)
 
@@ -39,6 +41,15 @@ def visualize_grid():
 
 
 visualize_grid()
+
+board = game_field.put_bush()
+for i in range(25):
+    for j in range(50):
+        if "second" in board[i][j]:
+            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\grass.png')
+            img = pygame.transform.scale(img, (60, 60))
+            screen.blit(img, (j*20, i*15))
+            pygame.display.flip()
 
 
 running = True
@@ -52,15 +63,13 @@ while running:
                 pygame.draw.line(screen, green, (1, x), (1000, x), 2)
                 pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
                 pygame.display.update()
-            pygame.draw.line(screen, green, (1, x), (1000, x), 2)
-            pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
-            pygame.display.update()
-            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\mine.png')
-            img = pygame.transform.scale(img, (60, 20))
-            screen.blit(img, (20, 0))
-            pygame.display.flip()
-
-
-
+            board = game_field.put_bush()
+            for i in range(25):
+                for j in range(50):
+                    if "first" in board[i][j]:
+                        img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\mine.png')
+                        img = pygame.transform.scale(img, (60, 20))
+                        screen.blit(img, (j*20, i*20))
+                        pygame.display.flip()
 
 

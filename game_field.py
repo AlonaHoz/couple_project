@@ -64,7 +64,7 @@ print(x)
 def put_bush():
     board = put_mine()
     total_count = 0
-    while total_count < 20:
+    while total_count < 80:
         value = True
         while value:
             random_row_number = random.randint(0, 24)
