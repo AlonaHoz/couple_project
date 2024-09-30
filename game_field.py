@@ -49,9 +49,9 @@ def put_mine():
                     total_count += 1
                     for s in range(random_col_number, random_col_number + 3):
                         if random_col_number == s:
-                            board[random_row_number][s] = "mine"
+                            board[random_row_number][s] = "first mine"
                         else:
-                            board[random_row_number][s] = "continue m"
+                            board[random_row_number][s] = "mine"
 
     return board
 
@@ -74,8 +74,7 @@ def put_bush():
                 while random_col_number > 47:
                     random_col_number = random.randint(1, 49)
                 for k in range(random_col_number, random_col_number + 3):
-                    if board[random_row_number][k] == "FREE" or "mine" and board[
-                        random_row_number + 1] == "FREE" or "mine":
+                    if board[random_row_number][k] == "FREE" or "mine" and board[random_row_number + 1] == "FREE" or "mine":
                         count += 1
                         total_count += 1
                 if count == 3:
@@ -89,4 +88,11 @@ def put_bush():
                             board[random_row_number][s] = "mine-bush"
                         else:
                             board[random_row_number][s] = "bush"
+                        if s == random_col_number:
+                            if "mine" in board[random_row_number][s]:
+                                board[random_row_number][s] = "second mine_bush"
+                            else:
+                                board[random_row_number][s] = "second bush"
     return board
+
+
