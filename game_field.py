@@ -27,7 +27,7 @@ def put_flag():
     board = put_man()
     for i in range(21, 25):
         for j in range(46, 50):
-            if board[i][j] == board[21][46]:
+            if board[i][j] == board[22][46]:
                 board[i][j] = "third flag"
             else:
                 board[i][j] = "flag"
@@ -37,7 +37,7 @@ def put_flag():
 def put_mine():
     board = put_flag()
     total_count = 0
-    while total_count < 80:
+    while total_count < 20:
         random_row_number = random.randint(0, 24)
         for i in range(25):
             if i == random_row_number:
