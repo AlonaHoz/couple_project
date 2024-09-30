@@ -2,8 +2,9 @@ import pygame
 from game_field import create_board
 from game_field import put_mine
 
+
 pygame.init()
-Mine: 'mine.png'
+
 
 screen = pygame.display.set_mode((1000, 500))
 
@@ -39,6 +40,7 @@ def visualize_grid():
 
 visualize_grid()
 
+
 running = True
 while running:
     for event in pygame.event.get():
@@ -50,9 +52,14 @@ while running:
                 pygame.draw.line(screen, green, (1, x), (1000, x), 2)
                 pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
                 pygame.display.update()
-            img = pygame.image.load('Mine')
-            img = pygame.transform.scale(img,(100, 200))
-            screen.blit(img, (400, 600))
+            pygame.draw.line(screen, green, (1, x), (1000, x), 2)
+            pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
+            pygame.display.update()
+            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\mine.png')
+            img = pygame.transform.scale(img, (60, 20))
+            screen.blit(img, (20, 0))
+            pygame.display.flip()
+
 
 
 

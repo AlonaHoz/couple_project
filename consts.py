@@ -3,4 +3,4 @@ NUM_ROW = 25
 NUM_COL = 50
 
 # screen
-Mine: 'mine.png'
+
