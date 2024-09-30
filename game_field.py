@@ -27,7 +27,7 @@ def put_flag():
     board = put_man()
     for i in range(21, 25):
         for j in range(46, 50):
-            if board[i][j] == board[21][46]:
+            if board[i][j] == board[22][46]:
                 board[i][j] = "third flag"
             else:
                 board[i][j] = "flag"
