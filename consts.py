@@ -1,4 +1,6 @@
 #3 game_field:
+import pygame.key
+
 NUM_ROW = 25
 NUM_COL = 50
 MAN_ROW_SLOT = 5
@@ -10,3 +12,6 @@ Y = 0
 X = 0
 
 ## soldier:
+
+
+

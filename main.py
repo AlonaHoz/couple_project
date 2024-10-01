@@ -2,23 +2,26 @@ import time
 
 import pygame
 import screen
+import soldier
+key = pygame.key.get_pressed()
+
 
 running = True
 while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+        if key == pygame.K_RETURN:
+            screen.black_screen()
+            time.sleep(1)
+            soldier.move_soldier()
+            screen.print_normal()
 
 
-screen.print_normal()
-screen.black_screen()
-screen.print_normal()
-pygame.time.delay(10000)
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
+
+
+
+
 
 
 

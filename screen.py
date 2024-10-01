@@ -1,3 +1,5 @@
+import time
+
 import pygame
 
 import game_field
@@ -40,9 +42,9 @@ def visualize_grid():
 
 visualize_grid()
 list_bush = game_field.put_bush()
+board = game_field.put_mine()
 
 def print_normal():
-    board = game_field.put_mine()
     screen.fill(green)
     for i in range(25):
         for j in range(50):
@@ -63,36 +65,39 @@ def print_normal():
                 pygame.display.update()
 
 def black_screen():
-    if event.type == pygame.KEYDOWN:
-        if event.key == pygame.K_RETURN:
-            screen.fill(black)
-            for x in range(0, 1000, 20):
-                pygame.draw.line(screen, green, (1, x), (1000, x), 2)
-                pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
-                pygame.display.update()
-            board = game_field.put_mine()
-            for i in range(25):
-                for j in range(50):
-                    if "first" in board[i][j]:
-                        img = pygame.image.load('mine.png')
-                        img = pygame.transform.scale(img, (60, 20))
-                        screen.blit(img, (j * 20, i * 20))
-                        pygame.display.flip()
-                    if "fourth" in board[i][j]:
-                        img = pygame.image.load('soldier_nigth.png')
-                        img = pygame.transform.scale(img, (60, 60))
-                        screen.blit(img, (j * 20, i * 20))
-                        pygame.display.flip()
-                        running = False
+        screen.fill(black)
+        for x in range(0, 1000, 20):
+            pygame.draw.line(screen, green, (1, x), (1000, x), 2)
+            pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
+            pygame.display.update()
+        for i in range(25):
+            for j in range(50):
+                if "first" in board[i][j]:
+                    img = pygame.image.load('mine.png')
+                    img = pygame.transform.scale(img, (60, 20))
+                    screen.blit(img, (j * 20, i * 20))
+                    pygame.display.flip()
+                if "fourth" in board[i][j]:
+                    img = pygame.image.load('soldier_nigth.png')
+                    img = pygame.transform.scale(img, (60, 60))
+                    screen.blit(img, (j * 20, i * 20))
+                    pygame.display.flip()
+
+
+
+
+
+
 print_normal()
 black_screen()
 print_normal()
 
+def run():
+    running = True
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
 
-running = True
-while running:
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            running = False
 
 
