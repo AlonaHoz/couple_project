@@ -44,6 +44,7 @@ visualize_grid()
 list_bush = game_field.put_bush()
 board = game_field.put_mine()
 
+
 def print_normal():
     screen.fill(green)
     for i in range(25):
@@ -52,42 +53,42 @@ def print_normal():
                 img = pygame.image.load('grass.png')
                 img = pygame.transform.scale(img, (60, 60))
                 screen.blit(img, (j * 18, i * 18))
-                pygame.display.flip()
             if "fourth" in board[i][j]:
                 img = pygame.image.load('soldier.png')
                 img = pygame.transform.scale(img, (60, 60))
                 screen.blit(img, (j * 20, i * 20))
-                pygame.display.flip()
             if "third" in board[i][j]:
                 img = pygame.image.load('flag.png')
                 img = pygame.transform.scale(img, (60, 60))
                 screen.blit(img, (j * 20, i * 20))
-                pygame.display.update()
+    pygame.display.update()
+
 
 def black_screen():
-        screen.fill(black)
-        for x in range(0, 1000, 20):
-            pygame.draw.line(screen, green, (1, x), (1000, x), 2)
-            pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
-            pygame.display.update()
-        for i in range(25):
-            for j in range(50):
-                if "first" in board[i][j]:
-                    img = pygame.image.load('mine.png')
-                    img = pygame.transform.scale(img, (60, 20))
-                    screen.blit(img, (j * 20, i * 20))
-                    pygame.display.flip()
-                if "fourth" in board[i][j]:
-                    img = pygame.image.load('soldier_nigth.png')
-                    img = pygame.transform.scale(img, (60, 60))
-                    screen.blit(img, (j * 20, i * 20))
-                    pygame.display.flip()
+    screen.fill(black)
+    for x in range(0, 1000, 20):
+        pygame.draw.line(screen, green, (1, x), (1000, x), 2)
+        pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
+        pygame.display.update()
+    for i in range(25):
+        for j in range(50):
+            if "first" in board[i][j]:
+                img = pygame.image.load('mine.png')
+                img = pygame.transform.scale(img, (60, 20))
+                screen.blit(img, (j * 20, i * 20))
+                pygame.display.flip()
+            if "fourth" in board[i][j]:
+                img = pygame.image.load('soldier_nigth.png')
+                img = pygame.transform.scale(img, (60, 60))
+                screen.blit(img, (j * 20, i * 20))
+                pygame.display.flip()
 
 
 
-print_normal()
-black_screen()
-print_normal()
+# print_normal()
+# black_screen()
+# print_normal()
+
 
 def run():
     running = True
@@ -95,6 +96,3 @@ def run():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 running = False
-
-
-
