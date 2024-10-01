@@ -40,7 +40,7 @@ def put_flag():
 def put_mine():
     board = put_flag()
     total_count = 0
-    while total_count < 21:
+    while total_count < 20:
         random_row_number = random.randint(0, 24)
         for i in range(25):
             if i == random_row_number:
