@@ -20,6 +20,9 @@ put_mine()
 grid_node_width = 20
 grid_node_height = 20
 
+PAUSE = False
+
+
 
 def create_square(z, y, color):
     pygame.draw.rect(screen, color, [z, y, grid_node_width, grid_node_height])
@@ -68,18 +71,19 @@ while running:
         if event.type == pygame.QUIT:
             running = False
         if event.type == pygame.KEYDOWN:
-            screen.fill(black)
-            for x in range(0, 1000, 20):
-                pygame.draw.line(screen, green, (1, x), (1000, x), 2)
-                pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
-                pygame.display.update()
-            board = game_field.put_bush()
-            for i in range(25):
-                for j in range(50):
-                    if "first" in board[i][j]:
-                        img = pygame.image.load('mine.png')
-                        img = pygame.transform.scale(img, (60, 20))
-                        screen.blit(img, (j*20, i*20))
-                        pygame.display.flip()
+            if event.key == pygame.K_RETURN:
+                screen.fill(black)
+                for x in range(0, 1000, 20):
+                    pygame.draw.line(screen, green, (1, x), (1000, x), 2)
+                    pygame.draw.line(screen, green, (x, 1), (x, 1000), 2)
+                    pygame.display.update()
+                board = game_field.put_bush()
+                for i in range(25):
+                    for j in range(50):
+                        if "first" in board[i][j]:
+                            img = pygame.image.load('mine.png')
+                            img = pygame.transform.scale(img, (60, 20))
+                            screen.blit(img, (j*20, i*20))
+                            pygame.display.flip()
 
 
