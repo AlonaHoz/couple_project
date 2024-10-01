@@ -1,11 +1,25 @@
-import pygame
-from screen import print_normal
-from screen import black_screen
+import time
 
-print_normal()
-black_screen()
-pygame.time.delay(100)
-print_normal()
+import pygame
+import screen
+
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+
+screen.print_normal()
+screen.black_screen()
+screen.print_normal()
+pygame.time.delay(10000)
+running = True
+while running:
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
 
 
 
