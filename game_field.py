@@ -40,7 +40,7 @@ def put_flag():
 def put_mine():
     board = put_flag()
     total_count = 0
-    while total_count < 20:
+    while total_count < 61:
         random_row_number = random.randint(0, 24)
         for i in range(25):
             if i == random_row_number:
@@ -52,8 +52,8 @@ def put_mine():
                     if board[random_row_number][k] == "FREE":
                         count += 1
                 if count == 3:
-                    total_count += 1
                     for s in range(random_col_number, random_col_number + 3):
+                        total_count += 1
                         if random_col_number == s:
                             board[random_row_number][s] = "first mine"
                         else:
