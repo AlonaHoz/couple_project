@@ -85,9 +85,6 @@ def black_screen():
 
 
 
-
-
-
 print_normal()
 black_screen()
 print_normal()

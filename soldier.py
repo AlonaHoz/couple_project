@@ -21,7 +21,6 @@ def move_soldier():
                         elif board[i][j] == "leg":
                             board[i][j] = "FREE"
                             board[i - 1][j] = "leg"
-                    pygame.display.update()
             elif event.key == pygame.K_DOWN:
                 for i in range(25):
                     for j in range(50):
@@ -34,7 +33,6 @@ def move_soldier():
                         elif board[i][j] == "leg":
                             board[i][j] = "FREE"
                             board[i + 1][j] = "leg"
-                pygame.display.update()
             elif event.key == pygame.K_LEFT:
                 for i in range(25):
                     for j in range(50):
@@ -47,7 +45,6 @@ def move_soldier():
                         elif board[i][j] == "leg":
                             board[i][j] = "FREE"
                             board[i][j - 1] = "leg"
-                pygame.display.update()
             elif event.key == pygame.K_RIGHT:
                 for i in range(25):
                     for j in range(50):
@@ -60,7 +57,6 @@ def move_soldier():
                         elif board[i][j] == "leg":
                             board[i][j] = "FREE"
                             board[i][j + 1] = "leg"
-                pygame.display.update()
         return board
 
 
