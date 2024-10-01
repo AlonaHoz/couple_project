@@ -20,6 +20,10 @@ while running:
             time.sleep(1)
             screen.print_normal()
 
+    screen = soldier.move_soldier_2()
+    pygame.display.flip()
+
+
 
 
 
