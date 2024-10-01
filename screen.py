@@ -46,12 +46,17 @@ board = game_field.put_bush()
 for i in range(25):
     for j in range(50):
         if "second" in board[i][j]:
-            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\grass.png')
+            img = pygame.image.load('grass.png')
             img = pygame.transform.scale(img, (60, 60))
             screen.blit(img, (j * 18, i * 18))
             pygame.display.flip()
+        if "fourth" in board[i][j]:
+            img = pygame.image.load('soldier.png')
+            img = pygame.transform.scale(img, (60, 60))
+            screen.blit(img, (j * 20, i * 20))
+            pygame.display.flip()
         if "third" in board[i][j]:
-            img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\flag.png')
+            img = pygame.image.load('flag.png')
             img = pygame.transform.scale(img, (80, 60))
             screen.blit(img, (j * 20, i * 20))
             pygame.display.flip()
@@ -72,7 +77,7 @@ while running:
             for i in range(25):
                 for j in range(50):
                     if "first" in board[i][j]:
-                        img = pygame.image.load(r'C:\Users\jbt\Mate1\couple_project\mine.png')
+                        img = pygame.image.load('mine.png')
                         img = pygame.transform.scale(img, (60, 20))
                         screen.blit(img, (j*20, i*20))
                         pygame.display.flip()
