@@ -79,6 +79,7 @@ def move_soldier_2():
     img = pygame.image.load('soldier.png')
     img = pygame.transform.scale(img, (60, 60))
     screen.screen.blit(img, (soldier_loc[0] * 20, soldier_loc[1] * 20))
+
     pygame.display.update()
 
 
