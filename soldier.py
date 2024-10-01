@@ -56,9 +56,18 @@ def move_soldier():
                 elif board[i][j] == "leg":
                     board[i][j] = "FREE"
                     board[i][j + 20] = "leg"
+    pygame.display.update()
     return board
 
 
-
+def move_soldier_2():
+    man_list = []
+    board = game_field.put_mine()
+    for i in range(25):
+        for j in range(50):
+            if board[i][j] == "fourth body" or "body" or "leg":
+                man = (i, j)
+                man_list.append(man)
+    return man_list
 
 
