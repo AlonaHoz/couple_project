@@ -1,12 +1,13 @@
 import random
+import consts
 
 
 def create_board():
     board = []
     spot = "FREE"
-    for i in range(25):
+    for i in range(consts.NUM_ROW):
         second_list = []
-        for j in range(50):
+        for j in range(consts.NUM_COL):
             second_list.append(spot)
         board.append(second_list)
     return board
@@ -14,8 +15,8 @@ def create_board():
 
 def put_man():
     board = create_board()
-    for i in range(0, 5):
-        for j in range(0, 2):
+    for i in range(0, consts.MAN_ROW_SLOT):
+        for j in range(0, consts.MAN_COL_SLOT):
             if i < 3:
                 board[i][j] = "body"
             else:
@@ -25,7 +26,7 @@ def put_man():
 
 def put_flag():
     board = put_man()
-    for i in range(21, 25):
+    for i in range(21, consts.NUM_ROW):
         for j in range(46, 50):
             if board[i][j] == board[22][46]:
                 board[i][j] = "third flag"
