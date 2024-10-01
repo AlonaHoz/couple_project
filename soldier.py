@@ -13,34 +13,34 @@ def move_soldier():
             for j in range(50):
                 if board[i][j] == "fourth body":
                     board[i][j] = "FREE"
-                    board[i - 20][j] = "fourth body"
+                    board[i - 1][j] = "fourth body"
                 elif board[i][j] == "body":
                     board[i][j] = "FREE"
-                    board[i - 20][j] = "body"
+                    board[i - 1][j] = "body"
                 elif board[i][j] == "leg":
                     board[i][j] = "FREE"
-                    board[i - 20][j] = "leg"
+                    board[i - 1][j] = "leg"
     elif key[pygame.K_DOWN]:
         for i in range(25):
             for j in range(50):
                 if board[i][j] == "fourth body":
                     board[i][j] = "FREE"
-                    board[i + 20][j] = "fourth body"
+                    board[i + 1][j] = "fourth body"
                 elif board[i][j] == "body":
                     board[i][j] = "FREE"
-                    board[i + 20][j] = "body"
+                    board[i + 1][j] = "body"
                 elif board[i][j] == "leg":
                     board[i][j] = "FREE"
-                    board[i + 20][j] = "leg"
+                    board[i + 1][j] = "leg"
     elif key[pygame.K_LEFT]:
         for i in range(25):
             for j in range(50):
                 if board[i][j] == "fourth body":
                     board[i][j] = "FREE"
-                    board[i][j - 20] = "fourth body"
+                    board[i][j - 1] = "fourth body"
                 elif board[i][j] == "body":
                     board[i][j] = "FREE"
-                    board[i][j - 20] = "body"
+                    board[i][j - 1] = "body"
                 elif board[i][j] == "leg":
                     board[i][j] = "FREE"
                     board[i][j - 1] = "leg"
