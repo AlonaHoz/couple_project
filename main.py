@@ -15,7 +15,7 @@ while running:
             screen.black_screen()
             time.sleep(1)
             screen.print_normal()
-            soldier.move_soldier()
+            soldier.move_soldier_2()
 
 
 

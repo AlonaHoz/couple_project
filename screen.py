@@ -84,7 +84,6 @@ def black_screen():
                 pygame.display.flip()
 
 
-
 # print_normal()
 # black_screen()
 # print_normal()
