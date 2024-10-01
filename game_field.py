@@ -17,7 +17,9 @@ def put_man():
     board = create_board()
     for i in range(0, consts.MAN_ROW_SLOT):
         for j in range(0, consts.MAN_COL_SLOT):
-            if i < 3:
+            if board[0][0] == board[i][j]:
+                board[i][j] = "fourth body"
+            elif i < 3:
                 board[i][j] = "body"
             else:
                 board[i][j] = "leg"
