@@ -89,6 +89,7 @@ def put_bush():
                         place_2 = (random_row_number+1, s)
                         bush_list.append(place)
                         bush_list.append(place_2)
+
     return bush_list
 
 
