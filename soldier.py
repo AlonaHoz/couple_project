@@ -49,13 +49,13 @@ def move_soldier():
             for j in range(50):
                 if board[i][j] == "fourth body":
                     board[i][j] = "FREE"
-                    board[i][j + 20] = "fourth body"
+                    board[i][j + 1] = "fourth body"
                 elif board[i][j] == "body":
                     board[i][j] = "FREE"
-                    board[i][j + 20] = "body"
+                    board[i][j + 1] = "body"
                 elif board[i][j] == "leg":
                     board[i][j] = "FREE"
-                    board[i][j + 20] = "leg"
+                    board[i][j + 1] = "leg"
     pygame.display.update()
     return board
 
