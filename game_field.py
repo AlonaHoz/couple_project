@@ -30,8 +30,8 @@ def put_flag():
     board = put_man()
     for i in range(21, consts.NUM_ROW):
         for j in range(46, 50):
-            if board[i][j] == board[22][46]:
-                board[22][46] = "third flag"
+            if board[i][j] == board[22][47]:
+                board[22][47] = "third flag"
             else:
                 board[i][j] = "flag"
     return board

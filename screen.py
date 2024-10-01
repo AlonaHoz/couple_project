@@ -57,7 +57,7 @@ for i in range(25):
             pygame.display.flip()
         if "third" in board[i][j]:
             img = pygame.image.load('flag.png')
-            img = pygame.transform.scale(img, (80, 60))
+            img = pygame.transform.scale(img, (60, 60))
             screen.blit(img, (j * 20, i * 20))
             pygame.display.flip()
 
