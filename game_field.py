@@ -40,7 +40,7 @@ def put_flag():
 def put_mine():
     board = put_flag()
     total_count = 0
-    while total_count < 61:
+    while total_count < 21:
         random_row_number = random.randint(0, 24)
         for i in range(25):
             if i == random_row_number:
@@ -52,8 +52,8 @@ def put_mine():
                     if board[random_row_number][k] == "FREE":
                         count += 1
                 if count == 3:
+                    total_count += 1
                     for s in range(random_col_number, random_col_number + 3):
-                        total_count += 1
                         if random_col_number == s:
                             board[random_row_number][s] = "first mine"
                         else:
@@ -61,12 +61,11 @@ def put_mine():
 
     return board
 
-x = put_mine()
-print(x)
 
 def put_bush():
     board = put_mine()
     total_count = 0
+    bush_list = []
     while total_count < 80:
         value = True
         while value:
@@ -86,19 +85,10 @@ def put_bush():
                 if count == 3:
                     total_count += 1
                     for s in range(random_col_number, random_col_number + 3):
-                        if board[random_row_number + 1][s] == "mine":
-                            board[random_row_number + 1][s] = "mine-bush"
-                        else:
-                            board[random_row_number + 1][s] = "bush"
-                        if board[random_row_number][s] == "mine":
-                            board[random_row_number][s] = "mine-bush"
-                        else:
-                            board[random_row_number][s] = "bush"
-                        if s == random_col_number:
-                            if "mine" in board[random_row_number][s]:
-                                board[random_row_number][s] = "second mine_bush"
-                            else:
-                                board[random_row_number][s] = "second bush"
-    return board
+                        place = (random_row_number, s)
+                        place_2 = (random_row_number+1, s)
+                        bush_list.append(place)
+                        bush_list.append(place_2)
+    return bush_list
 
 

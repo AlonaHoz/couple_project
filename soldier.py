@@ -2,32 +2,61 @@ import game_field
 import pygame
 import game_field
 import consts
+import screen
 
-keys = pygame.key.get_pressed()
-while not keys[pygame.K_ESCAPE]:
+
+def move_soldier():
     board = game_field.put_bush()
-    x = 0
-    y = 0
-    keys = pygame.key.get_pressed()
-    if keys[pygame.K_UP]:
-        for i in range(25):
-            for j in range(50):
-                if board[i][j] == "fourth body":
-                    board[i][j] = "FREE"
-                    board[i-1][j] = "fourth body"
-                elif board[i][j] == "body":
-                    board[i][j] = "FREE"
-                    board[i - 1][j] = "body"
-    elif keys[pygame.K_DOWN]:
-        y += 1
-        move = (x, y)
-    elif keys[pygame.K_LEFT]:
-        x -= 1
-        move = (x, y)
-    elif keys[pygame.K_RIGHT]:
-        x += 1
-        move = (x, y)
+    for event in pygame.event.get():
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_UP:
+                for i in range(25):
+                    for j in range(50):
+                        if board[i][j] == "fourth body":
+                            board[i][j] = "FREE"
+                            board[i - 1][j] = "fourth body"
+                        elif board[i][j] == "body":
+                            board[i][j] = "FREE"
+                            board[i - 1][j] = "body"
+                        elif board[i][j] == "leg":
+                            board[i][j] = "FREE"
+                            board[i - 1][j] = "leg"
+            elif event.key == pygame.K_DOWN:
+                for i in range(25):
+                    for j in range(50):
+                        if board[i][j] == "fourth body":
+                            board[i][j] = "FREE"
+                            board[i + 1][j] = "fourth body"
+                        elif board[i][j] == "body":
+                            board[i][j] = "FREE"
+                            board[i + 1][j] = "body"
+                        elif board[i][j] == "leg":
+                            board[i][j] = "FREE"
+                            board[i + 1][j] = "leg"
+            elif event.key == pygame.K_LEFT:
+                for i in range(25):
+                    for j in range(50):
+                        if board[i][j] == "fourth body":
+                            board[i][j] = "FREE"
+                            board[i][j - 1] = "fourth body"
+                        elif board[i][j] == "body":
+                            board[i][j] = "FREE"
+                            board[i][j - 1] = "body"
+                        elif board[i][j] == "leg":
+                            board[i][j] = "FREE"
+                            board[i][j - 1] = "leg"
+            elif event.key == pygame.K_RIGHT:
+                for i in range(25):
+                    for j in range(50):
+                        if board[i][j] == "fourth body":
+                            board[i][j] = "FREE"
+                            board[i][j + 1] = "fourth body"
+                        elif board[i][j] == "body":
+                            board[i][j] = "FREE"
+                            board[i][j + 1] = "body"
+                        elif board[i][j] == "leg":
+                            board[i][j] = "FREE"
+                            board[i][j + 1] = "leg"
+        return board
 
 
-def result_of_move():
-    for
