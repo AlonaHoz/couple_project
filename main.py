@@ -8,3 +8,4 @@ pygame.time.delay(100)
 print_normal()
 
 
+
