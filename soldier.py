@@ -15,6 +15,9 @@ while not keys[pygame.K_ESCAPE]:
                 if board[i][j] == "fourth body":
                     board[i][j] = "FREE"
                     board[i-1][j] = "fourth body"
+                elif board[i][j] == "body":
+                    board[i][j] = "FREE"
+                    board[i - 1][j] = "body"
     elif keys[pygame.K_DOWN]:
         y += 1
         move = (x, y)
