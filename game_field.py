@@ -84,12 +84,14 @@ def put_bush():
                         total_count += 1
                 if count == 3:
                     total_count += 1
-                    for s in range(random_col_number):
+                    for s in range(random_col_number, random_col_number + 3):
+                        if s == random_col_number:
+                            place = (random_row_number, s, "second")
+                            bush_list.append(place)
                         place = (random_row_number, s)
-                        place_2 = (random_row_number+1, s)
                         bush_list.append(place)
-                        bush_list.append(place_2)
-
+                        place = (random_row_number+1, s)
+                        bush_list.append(place)
     return bush_list
 
 
